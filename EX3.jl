@@ -8,6 +8,7 @@ println(size(img[:,:,1]))
 println(size(img[:,1,:]))
 println(size(img[1,:,:]))
 
+println("Bug Bug Bug")
 
 # a function that takes in an image as a filename and returns
 # the three different color breakdowns of that image
