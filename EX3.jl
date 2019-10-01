@@ -1,7 +1,7 @@
 using JLD
 
-Pkg.add("Images")
-include("standard_start.jl")
+# Pkg.add("Images")
+# include("standard_start.jl")
 img = imread("el-capitan.png")
 imshow(img)
 println(size(img[:,:,1]))
@@ -20,3 +20,19 @@ function converToRGB(fileName::String)
     blue = img[:, :, 3]
     return red, green, blue
 end
+
+# part e
+image2 = zeros(360, 640, 3)
+returnInfo = converToRGB("el-capitan.png")
+image2[:, :, 1] = returnInfo[2]
+image2[:, :, 2] = returnInfo[3]
+image2[:, :, 3] = returnInfo[1]
+
+figure(2)
+subplot(1,2,1)
+imshow(img)
+title("Same images with different colors altered")
+axis("off")
+subplot(1,2,2)
+imshow(image2)
+axis("off")
